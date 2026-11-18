@@ -1,0 +1,46 @@
+[build-system]
+requires = ["hatchling>=1.27"]
+build-backend = "hatchling.build"
+
+[project]
+name = "nocthost"
+dynamic = ["version"]
+description = "Official Python client for the NoctHost API: deploy and manage hourly-billed cloud servers from one prepaid balance."
+readme = "README.md"
+requires-python = ">=3.9"
+license = "MIT"
+license-files = ["LICENSE"]
+authors = [{ name = "Nocthost OÜ" }]
+keywords = ["nocthost", "vps", "cloud", "servers", "api", "sdk", "gpu", "hosting"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3 :: Only",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Topic :: Internet",
+    "Topic :: System :: Systems Administration",
+    "Typing :: Typed",
+]
+dependencies = []
+
+[project.urls]
+Homepage = "https://nocthost.com"
+Documentation = "https://nocthost.com/docs/api"
+Repository = "https://github.com/DanielChernov7/nocthost-python"
+Issues = "https://github.com/DanielChernov7/nocthost-python/issues"
+Changelog = "https://github.com/DanielChernov7/nocthost-python/blob/main/CHANGELOG.md"
+
+[tool.hatch.version]
+path = "src/nocthost/_version.py"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/nocthost"]
+
+[tool.hatch.build.targets.sdist]
+include = ["src/nocthost", "tests", "README.md", "LICENSE", "CHANGELOG.md", "pyproject.toml"]
